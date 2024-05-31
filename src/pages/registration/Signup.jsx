@@ -13,7 +13,7 @@ function Signup() {
     }
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      alert("Signup Successful");
+
       setEmail("");
       setPassword("");
     } catch (error) {
