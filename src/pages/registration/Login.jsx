@@ -16,6 +16,7 @@ function Login() {
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
       const users = localStorage.setItem("user", JSON.stringify(user));
+      alert("Signin Successful");
       navigate("/");
       setEmail("");
       setPassword("");
