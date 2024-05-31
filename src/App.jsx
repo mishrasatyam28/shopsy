@@ -9,26 +9,29 @@ import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
 import AdminHome from "./admin/home/AdminHome";
 import AddProduct from "./admin/addProduct/AddProduct";
 import UpdateProduct from "./admin/updateProduct/UpdateProduct";
+import MyState from "./context/data/myState.jsx";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/admin" element={<AdminHome />} />
-        <Route path="/addproduct" element={<AddProduct />} />
-        <Route path="/updateproduct" element={<UpdateProduct />} />
-      </Routes>
-    </Router>
+    <MyState>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/admin" element={<AdminHome />} />
+          <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/updateproduct" element={<UpdateProduct />} />
+        </Routes>
+      </Router>
+    </MyState>
   );
 }
 
