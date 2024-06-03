@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import myContext from "../../context/data/myContext";
 import { useContext, useState } from "react";
 import { toast } from "react-toastify";
@@ -8,6 +8,7 @@ import Loader from "../../components/loader/Loader";
 import OAuth from "./OAuth";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,7 +30,9 @@ function Login() {
         progress: undefined,
         theme: "colored",
       });
-      window.location.href = "/";
+      // window.location.href = "/";
+      navigate("/");
+
       setLoading(false);
     } catch (error) {
       toast.error("Sigin Failed", {
