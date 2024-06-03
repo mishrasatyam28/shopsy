@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import { BsFillCloudSunFill } from "react-icons/bs";
@@ -82,13 +82,7 @@ export default function Navbar() {
                       </Link>
                     </div>
                   ) : (
-                    <Link
-                      to={"/signup"}
-                      className="text-sm font-medium text-gray-700 "
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      Signup
-                    </Link>
+                    ""
                   )}
 
                   {user?.user?.email === "admin@gmail.com" ? (
@@ -116,7 +110,15 @@ export default function Navbar() {
                       </a>
                     </div>
                   ) : (
-                    ""
+                    <div className="flow-root">
+                      <Link
+                        to={"/signup"}
+                        className="text-sm font-medium text-gray-700 "
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        Signup
+                      </Link>
+                    </div>
                   )}
                   <div className="flow-root">
                     <Link
@@ -233,7 +235,13 @@ export default function Navbar() {
                       Order
                     </Link>
                   ) : (
-                    ""
+                    <Link
+                      to={"/signup"}
+                      className="text-sm font-medium text-gray-700 "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Signup
+                    </Link>
                   )}
                   {user?.user?.email === "admin@gmail.com" ? (
                     <Link
