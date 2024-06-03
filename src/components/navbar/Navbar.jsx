@@ -82,7 +82,13 @@ export default function Navbar() {
                       </Link>
                     </div>
                   ) : (
-                    ""
+                    <Link
+                      to={"/signup"}
+                      className="text-sm font-medium text-gray-700 "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Signup
+                    </Link>
                   )}
 
                   {user?.user?.email === "admin@gmail.com" ? (
